@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ivan // Персональне портфоліо — Ліцей №141 «ОРТ»</title>
+  <meta name="description" content="Персональне веб-портфоліо Івана. Ліцей №141 «ОРТ», курс Основи штучного інтелекту. Кіберспорт (Fortnite Unreal, Dota 2), бокс, японський архівний авангард та андерграунд хіп-хоп.">
+  <meta name="author" content="Ivan">
+  <meta name="theme-color" content="#09090b">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Ivan // Персональне портфоліо">
+  <meta property="og:description" content="Стильне авангардне портфоліо: кіберспорт, бокс, японський архів та андерграунд хіп-хоп.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%2309090b' stroke='%23a855f7' stroke-width='6'/><text x='50' y='64' font-size='42' font-family='sans-serif' font-weight='800' fill='%23ffffff' text-anchor='middle'>I</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- JavaScript Application -->
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+
+  <!-- Fluid Interactive Cursor -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true"></div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo" aria-label="Головна сторінка портфоліо">
+        <span class="brand-dot"></span>
+        <span>IVAN</span>
+        <span class="brand-sub">// 141 ОРТ</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Основна навігація">
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#about" class="nav-link">Про мене</a></li>
+          <li><a href="#esports" class="nav-link">Кіберспорт</a></li>
+          <li><a href="#boxing" class="nav-link">Бокс</a></li>
+          <li><a href="#music" class="nav-link">Музика</a></li>
+          <li><a href="#fashion" class="nav-link">Мода</a></li>
+          <li><a href="#contact" class="nav-link">Контакти</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#contact" class="header-cta-btn">
+          <span>Зв'язок</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <button class="nav-toggle" id="navToggle" aria-label="Відкрити меню" aria-expanded="false">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content-col">
+          <div class="hero-meta-strip">
+            <span class="meta-chip highlight">
+              <span class="status-indicator"></span>
+              <span>м. Київ • Ліцей №141 «ОРТ»</span>
+            </span>
+            <span class="meta-chip">Курс «ОШІ» // Проєкт №1</span>
+          </div>
+
+          <h1 class="hero-headline">IVAN</h1>
+          
+          <p class="hero-description">
+            Студент ліцею, поціновувач японського архітектурного авангарду, кіберспортсмен світового рівня в Fortnite та Dota 2, послідовник боксерської дисципліни.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#esports" class="btn-primary">
+              <span>Дослідити арену</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+            <a href="#music" class="btn-secondary">
+              <span>Аудіо плеєр</span>
+              <span aria-hidden="true">♬</span>
+            </a>
+          </div>
+
+          <div class="hero-specs-row">
+            <div class="spec-item">
+              <span class="spec-num">UNREAL</span>
+              <span class="spec-label">Fortnite // 5000+ годин</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-num">LEGEND 3</span>
+              <span class="spec-label">Dota 2 // Mid & Carry</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-num">6+ МІС</span>
+              <span class="spec-label">Боксерська база</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card-wrapper">
+          <div class="hero-art-card">
+            <div class="card-blueprint-overlay" aria-hidden="true"></div>
+            
+            <div class="art-card-header">
+              <span class="art-badge">ARCHIVE // AESTHETICS</span>
+              <span class="art-clock mono" id="liveClock">KYIV</span>
+            </div>
+
+            <div class="art-visual-center">
+              <div class="art-monogram-container">
+                <span class="art-monogram">IN</span>
+              </div>
+              <blockquote class="art-quote">
+                «Black is modest and arrogant at the same time. Black is lazy and easy — but mysterious.»
+              </blockquote>
+              <cite class="art-author">— Yohji Yamamoto</cite>
+            </div>
+
+            <div class="art-card-footer">
+              <div class="art-badges-row">
+                <span class="mini-badge purple">Fortnite Unreal</span>
+                <span class="mini-badge gold">Dota 2 Legend 3</span>
+                <span class="mini-badge red">Boxing Discipline</span>
+                <span class="mini-badge">Avant-Garde</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: About Me -->
+    <section id="about" class="section">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-label">
+            <span class="label-dash"></span>
+            <span>01 // IDENTITY & PHILOSOPHY</span>
+          </div>
+          <h2 class="section-title">Про мене</h2>
+          <p class="section-subtitle">
+            Гармонія технологій, непохитної фізичної витривалості та деконструктивної високої моди.
+          </p>
+        </header>
+
+        <div class="about-bento-grid">
+          <!-- Bento Card 1: Main Story -->
+          <article class="bento-card col-8">
+            <span class="bento-tag">Академічний шлях & Походження</span>
+            <h3 class="bento-heading">Освіта, дисципліна та креативне мислення</h3>
+            <p class="bento-text">
+              Я навчаюся в <strong>Ліцеї №141 «ОРТ» (м. Київ)</strong> — провідному інноваційному закладі, де технології стають інструментом для розкриття потенціалу. Цей сайт розроблено в рамках навчального курсу <strong>«Основи штучного інтелекту» (ОШІ)</strong> як практичний авторський проєкт №1.
+            </p>
+            <p class="bento-text">
+              Моє світосприйняття базується на контрастах: від інтенсивного стратегічного мислення у кіберспорті до суворої фізичної концентрації в боксерському залі та витонченої культури японського архітектурного одягу.
+            </p>
+
+            <div class="institution-badge">
+              <svg class="institution-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+              </svg>
+              <div>
+                <div class="institution-title">Ліцей №141 «ОРТ», м. Київ</div>
+                <div class="institution-sub">Курс: Основи штучного інтелекту (ОШІ) • Проєкт 1</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento Card 2: Quick Specs -->
+          <article class="bento-card col-4">
+            <span class="bento-tag">Характеристики</span>
+            <h3 class="bento-heading">Профіль гравця</h3>
+            <div class="bento-meta-list">
+              <div class="meta-row">
+                <span class="meta-label">Локація:</span>
+                <span class="meta-val">Київ, Україна</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Статус:</span>
+                <span class="meta-val">Ліцеїст / Студент</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Кіберспорт:</span>
+                <span class="meta-val">Unreal / Legend 3</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Спорт:</span>
+                <span class="meta-val">Бокс (6+ міс)</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Стиль:</span>
+                <span class="meta-val">Japanese Archive</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Звук:</span>
+                <span class="meta-val">Underground Rap</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Bento Card 3: Philosophy -->
+          <article class="bento-card col-6">
+            <span class="bento-tag">Світогляд</span>
+            <h3 class="bento-heading">Філософія темного мінімалізму</h3>
+            <p class="bento-text">
+              Для мене одяг — це не просто тканина, а архітектура та особистий щит. Я надихаюся концепціями Yohji Yamamoto, Rick Owens та Maison Margiela: монохромні форми, структурні об'єми та свобода самовираження без голосних логотипів.
+            </p>
+          </article>
+
+          <!-- Bento Card 4: Synergy -->
+          <article class="bento-card col-6">
+            <span class="bento-tag">Синтез навичок</span>
+            <h3 class="bento-heading">Швидкість реакції та характер</h3>
+            <p class="bento-text">
+              Понад 7500 сумарних годин у змагальних іграх навчили мене приймати рішення за мілісекунди. Водночас бокс загартовує холодний розум, витримку ударів і контроль дихання у стресових ситуаціях.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Esports Arena -->
+    <section id="esports" class="section">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-label">
+            <span class="label-dash"></span>
+            <span>02 // CYBERSPORTS ARENA</span>
+          </div>
+          <h2 class="section-title">Кіберспорт</h2>
+          <p class="section-subtitle">
+            Вищий рівень змагальної майстерності. Тисячі годин аналітики, реакції та тактичного лідерства.
+          </p>
+        </header>
+
+        <div class="esports-grid">
+          <!-- Fortnite Card -->
+          <article class="esports-card fortnite">
+            <span class="card-watermark" aria-hidden="true">FN</span>
+            
+            <div class="esports-card-top">
+              <div>
+                <h3 class="game-title">Fortnite</h3>
+                <span class="game-tagline">Battle Royale & Competitive Ranked</span>
+              </div>
+              <div class="rank-badge-visual unreal" aria-label="Ранг Unreal у Fortnite">
+                <svg class="rank-svg" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                  <polygon points="50,6 92,30 92,70 50,94 8,70 8,30" stroke="#a855f7" stroke-width="4" fill="rgba(168, 85, 247, 0.15)"/>
+                  <polygon points="50,18 80,35 80,65 50,82 20,65 20,35" stroke="#c084fc" stroke-width="3" fill="rgba(192, 132, 252, 0.25)"/>
+                  <circle cx="50" cy="50" r="14" fill="#f3e8ff"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="esports-stats-showcase">
+              <div>
+                <span class="stat-box-title">Офіційний Ранг</span>
+                <span class="stat-box-val unreal-color">UNREAL</span>
+              </div>
+              <div>
+                <span class="stat-box-title">Ігровий Досвід</span>
+                <span class="stat-box-val">5,000+ ГОД</span>
+              </div>
+            </div>
+
+            <p class="bento-text">
+              Ранг <strong>Unreal</strong> — найвища сходинка рангової системи Fortnite, в яку входять лише елітні гравці світу. Досягнення цього рангу вимагає бездоганного таймінгу та холоднокровності.
+            </p>
+
+            <ul class="esports-feature-list">
+              <li class="feature-point">Piece control вищого рівня та блискавичний edit timing</li>
+              <li class="feature-point">Глибоке розуміння ротацій зон в end-game сценаріях</li>
+              <li class="feature-point">5000+ годин відточування мікро- та макро-механік</li>
+            </ul>
+          </article>
+
+          <!-- Dota 2 Card -->
+          <article class="esports-card dota">
+            <span class="card-watermark" aria-hidden="true">D2</span>
+            
+            <div class="esports-card-top">
+              <div>
+                <h3 class="game-title">Dota 2</h3>
+                <span class="game-tagline">MOBA Competitive Ranked</span>
+              </div>
+              <div class="rank-badge-visual legend" aria-label="Ранг Legend 3 у Dota 2">
+                <svg class="rank-svg" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+                  <polygon points="50,8 88,26 88,74 50,92 12,74 12,26" stroke="#d4a373" stroke-width="4" fill="rgba(212, 163, 115, 0.15)"/>
+                  <path d="M30 40 L50 24 L70 40 L62 76 L38 76 Z" stroke="#e5b887" stroke-width="3" fill="rgba(229, 184, 135, 0.25)"/>
+                  <circle cx="50" cy="50" r="6" fill="#faedcd"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="esports-stats-showcase">
+              <div>
+                <span class="stat-box-title">Офіційний Ранг</span>
+                <span class="stat-box-val legend-color">LEGEND 3</span>
+              </div>
+              <div>
+                <span class="stat-box-title">Ігровий Досвід</span>
+                <span class="stat-box-val">2,500+ ГОД</span>
+              </div>
+            </div>
+
+            <p class="bento-text">
+              Ранг <strong>Legend 3</strong> та 2500+ годин на ключових кор-позиціях. Відповідальність за темп матчу, контроль таймінгів фарму та вирішальні файтні рішення на карті.
+            </p>
+
+            <ul class="esports-feature-list">
+              <li class="feature-point">Макро-контроль ліній та таймінгів ворожих об'єктів</li>
+              <li class="feature-point">Клатч-моменти та фокус на позиціонуванні під час Team Fight</li>
+              <li class="feature-point">Ключові позиції: <strong>Mid Lane (Позиція 2)</strong> та <strong>Carry (Позиція 1)</strong></li>
+            </ul>
+
+            <div class="dota-roles-switch">
+              <span class="role-chip">⚔️ Position 1: Carry</span>
+              <span class="role-chip">👑 Position 2: Mid</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Boxing -->
+    <section id="boxing" class="section">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-label">
+            <span class="label-dash"></span>
+            <span>03 // PHYSICAL DISCIPLINE</span>
+          </div>
+          <h2 class="section-title">Бокс & Загартування</h2>
+          <p class="section-subtitle">
+            Фізична міць, координація рухів та самовладання під час навантажень.
+          </p>
+        </header>
+
+        <div class="boxing-layout">
+          <article class="boxing-story-card">
+            <span class="boxing-badge">🥊 ОЛІМПІЙСЬКИЙ БОКС // РЕГУЛЯРНІ ТРЕНУВАННЯ</span>
+            <h3 class="boxing-heading">Дисципліна, яка формує характер</h3>
+            <p class="boxing-lead">
+              Бокс для мене — це філософія непохитної концентрації. Я займаюся на рівні <strong>початківця</strong> з регулярним безперервним стажем тренувань <strong>понад 6 місяців (пів року)</strong>.
+            </p>
+            <p class="bento-text">
+              Боксерський ринг вчить не боятися зіткнень, зберігати холоднокровність під тиском і методично працювати над захистом та переміщенням ніг. Це ідеальний баланс для розвантаження розуму після аналітичної кіберспортивної роботи.
+            </p>
+
+            <div class="boxing-metrics-grid">
+              <div class="metric-card">
+                <div class="metric-num">6+ МІС</div>
+                <div class="metric-label">Регулярний стаж</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-num">POW / DEF</div>
+                <div class="metric-label">Фокус: техніка та захист</div>
+              </div>
+            </div>
+
+            <ul class="esports-feature-list">
+              <li class="feature-point">Постановка базового джебу, кросу та хуків</li>
+              <li class="feature-point">Робота на ногах (Footwork) та робота з важким мішком</li>
+              <li class="feature-point">Розвиток вибухової витривалості та реакції тіла</li>
+            </ul>
+          </article>
+
+          <!-- Interactive Boxing Round Timer -->
+          <div class="boxing-timer-card">
+            <div class="timer-header-info">
+              <span>БОКСЕРСЬКИЙ ТАЙМЕР</span>
+              <span class="timer-round-status" id="timerStatusBadge">ГОТОВНІСТЬ ДО РАУНДУ</span>
+            </div>
+
+            <div class="timer-display" id="timerDisplay">03:00</div>
+
+            <div class="timer-controls">
+              <button class="timer-btn start" id="timerStartBtn">СТАРТ</button>
+              <button class="timer-btn reset" id="timerResetBtn">СКИНУТИ</button>
+            </div>
+
+            <p class="timer-hint">
+              * Натисніть «СТАРТ», щоб розпочати тренувальний 3-хвилинний раунд зі звуковим сигналом боксерського гонгу.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Music & Underground Hip-Hop -->
+    <section id="music" class="section">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-label">
+            <span class="label-dash"></span>
+            <span>04 // AUDIO FREQUENCIES</span>
+          </div>
+          <h2 class="section-title">РЕП & Underground Hip-Hop</h2>
+          <p class="section-subtitle">
+            Аудіо-ландшафт для максимальної концентрації та вечірнього занурення в естетику.
+          </p>
+        </header>
+
+        <div class="music-layout">
+          <!-- Interactive Player -->
+          <div class="audio-player-card">
+            <div class="player-tape-deck">
+              <div class="cassette-reel-box" aria-hidden="true">
+                <div class="reel-center"></div>
+              </div>
+
+              <div class="player-now-playing">
+                <span class="player-status-tag" id="currentTrackTag">Underground Hip-Hop</span>
+                <h3 class="track-active-title" id="currentTrackTitle">night blooming jasmine</h3>
+                <span class="track-active-artist" id="currentTrackArtist">fakemink</span>
+              </div>
+            </div>
+
+            <!-- Waveform Visualizer -->
+            <div class="audio-visualizer-bars" aria-hidden="true">
+              <span class="viz-bar"></span><span class="viz-bar"></span><span class="viz-bar"></span>
+              <span class="viz-bar"></span><span class="viz-bar"></span><span class="viz-bar"></span>
+              <span class="viz-bar"></span><span class="viz-bar"></span><span class="viz-bar"></span>
+              <span class="viz-bar"></span><span class="viz-bar"></span><span class="viz-bar"></span>
+              <span class="viz-bar"></span><span class="viz-bar"></span><span class="viz-bar"></span>
+              <span class="viz-bar"></span><span class="viz-bar"></span><span class="viz-bar"></span>
+              <span class="viz-bar"></span><span class="viz-bar"></span><span class="viz-bar"></span>
+              <span class="viz-bar"></span><span class="viz-bar"></span><span class="viz-bar"></span>
+            </div>
+
+            <!-- Scrubber Track -->
+            <div class="player-scrubber-row">
+              <div class="scrubber-track" id="scrubberTrack" role="progressbar" aria-label="Прогрес треку">
+                <div class="scrubber-fill" id="scrubberFill"></div>
+              </div>
+              <div class="scrubber-timestamps">
+                <span id="trackCurrentTime">0:00</span>
+                <span id="trackTotalTime">2:34</span>
+              </div>
+            </div>
+
+            <!-- Controls Deck -->
+            <div class="player-controls-deck">
+              <div class="deck-playback-buttons">
+                <button class="control-btn" id="prevTrackBtn" aria-label="Попередній трек">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
+                  </svg>
+                </button>
+                <button class="control-btn play-main" id="playMainBtn" aria-label="Відтворити трек">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+                <button class="control-btn" id="nextTrackBtn" aria-label="Наступний трек">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
+                  </svg>
+                </button>
+              </div>
+
+              <div class="volume-control-wrap">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                </svg>
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="1" step="0.05" value="0.4" aria-label="Гучність">
+              </div>
+            </div>
+          </div>
+
+          <!-- Playlist Items List -->
+          <div class="tracks-curated-list">
+            <!-- Track 1 -->
+            <article class="track-item-card active" data-track-id="0">
+              <div class="track-item-left">
+                <span class="track-item-number">01</span>
+                <div>
+                  <h4 class="track-item-title">night blooming jasmine</h4>
+                  <span class="track-item-artist">fakemink</span>
+                </div>
+              </div>
+              <span class="track-tag-pill">2:34</span>
+            </article>
+
+            <!-- Track 2 -->
+            <article class="track-item-card" data-track-id="1">
+              <div class="track-item-left">
+                <span class="track-item-number">02</span>
+                <div>
+                  <h4 class="track-item-title">I Wanna Be Honest</h4>
+                  <span class="track-item-artist">PureSnow</span>
+                </div>
+              </div>
+              <span class="track-tag-pill">2:15</span>
+            </article>
+
+            <!-- Track 3 -->
+            <article class="track-item-card" data-track-id="2">
+              <div class="track-item-left">
+                <span class="track-item-number">03</span>
+                <div>
+                  <h4 class="track-item-title">Queen St.</h4>
+                  <span class="track-item-artist">twentythree</span>
+                </div>
+              </div>
+              <span class="track-tag-pill">2:50</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Fashion & Avant-Garde -->
+    <section id="fashion" class="section">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-label">
+            <span class="label-dash"></span>
+            <span>05 // JAPANESE ARCHIVE & AVANT-GARDE</span>
+          </div>
+          <h2 class="section-title">Мода та стиль</h2>
+          <p class="section-subtitle">
+            Культові модні доми, деконструкція та монументальна естетика темного силуету.
+          </p>
+        </header>
+
+        <!-- Category Filters -->
+        <div class="fashion-filter-bar" role="tablist" aria-label="Фільтри брендів">
+          <button class="filter-btn active" data-filter="all">Всі бренди (6)</button>
+          <button class="filter-btn" data-filter="japanese">Japanese Archive (3)</button>
+          <button class="filter-btn" data-filter="avantgarde">Avant-Garde (3)</button>
+        </div>
+
+        <div class="fashion-brands-grid">
+          <!-- Brand 1: Yohji Yamamoto -->
+          <article class="brand-card" data-category="japanese">
+            <div class="brand-card-top">
+              <span class="brand-category-tag">Japanese Archive</span>
+              <h3 class="brand-name">Yohji Yamamoto</h3>
+              <span class="brand-founder">Tokyo // Paris</span>
+            </div>
+            <p class="brand-desc">
+              Майстер темних драпувань та вільного об'єму. Руйнування класичних пропорцій на користь природного руху тканини.
+            </p>
+            <div class="brand-card-bottom">
+              <span class="brand-keyword-tag">#Deconstruction #Black</span>
+              <button class="brand-more-btn" data-brand="yohji" aria-label="Детальніше про Yohji Yamamoto">
+                <span>Огляд</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Brand 2: Undercover -->
+          <article class="brand-card" data-category="japanese">
+            <div class="brand-card-top">
+              <span class="brand-category-tag">Japanese Archive</span>
+              <h3 class="brand-name">Undercover</h3>
+              <span class="brand-founder">Jun Takahashi // Tokyo</span>
+            </div>
+            <p class="brand-desc">
+              Культовий симбіоз бунтарського панк-року, похмурого арту та японського стрітвіру найвищого кравецького ґатунку.
+            </p>
+            <div class="brand-card-bottom">
+              <span class="brand-keyword-tag">#PunkStreetwear #Archive</span>
+              <button class="brand-more-btn" data-brand="undercover" aria-label="Детальніше про Undercover">
+                <span>Огляд</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Brand 3: Maison Margiela -->
+          <article class="brand-card" data-category="japanese">
+            <div class="brand-card-top">
+              <span class="brand-category-tag">Japanese Archive</span>
+              <h3 class="brand-name">Maison Margiela</h3>
+              <span class="brand-founder">Martin Margiela // Paris</span>
+            </div>
+            <p class="brand-desc">
+              Анонімний геній концептуальної деконструкції, легендарне взуття Tabi, вивернуті шви та апсайклінг матеріалів.
+            </p>
+            <div class="brand-card-bottom">
+              <span class="brand-keyword-tag">#Tabi #WhiteStitches</span>
+              <button class="brand-more-btn" data-brand="margiela" aria-label="Детальніше про Maison Margiela">
+                <span>Огляд</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Brand 4: Rick Owens -->
+          <article class="brand-card" data-category="avantgarde">
+            <div class="brand-card-top">
+              <span class="brand-category-tag">Avant-Garde</span>
+              <h3 class="brand-name">Rick Owens</h3>
+              <span class="brand-founder">Lord of Darkness // Paris</span>
+            </div>
+            <p class="brand-desc">
+              Брутальний темний монументалізм, скульптурні шкіряні форми та культове взуття Geobasket і Ramones.
+            </p>
+            <div class="brand-card-bottom">
+              <span class="brand-keyword-tag">#Geobasket #Brutalism</span>
+              <button class="brand-more-btn" data-brand="rickowens" aria-label="Детальніше про Rick Owens">
+                <span>Огляд</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Brand 5: Issey Miyake -->
+          <article class="brand-card" data-category="avantgarde">
+            <div class="brand-card-top">
+              <span class="brand-category-tag">Avant-Garde</span>
+              <h3 class="brand-name">Issey Miyake</h3>
+              <span class="brand-founder">Tokyo // Pleats Please</span>
+            </div>
+            <p class="brand-desc">
+              Технологічна революція в текстилі: перманентне плісирування, органічна геометрія тканини та легкість скульптурних форм.
+            </p>
+            <div class="brand-card-bottom">
+              <span class="brand-keyword-tag">#PleatsPlease #TextileTech</span>
+              <button class="brand-more-btn" data-brand="isseymiyake" aria-label="Детальніше про Issey Miyake">
+                <span>Огляд</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+
+          <!-- Brand 6: Comme des Garçons -->
+          <article class="brand-card" data-category="avantgarde">
+            <div class="brand-card-top">
+              <span class="brand-category-tag">Avant-Garde</span>
+              <h3 class="brand-name">Comme des Garçons</h3>
+              <span class="brand-founder">Rei Kawakubo // Tokyo</span>
+            </div>
+            <p class="brand-desc">
+              Радикальна анти-мода, філософія естетики недосконалості Wabi-Sabi та знищення консервативних силуетів.
+            </p>
+            <div class="brand-card-bottom">
+              <span class="brand-keyword-tag">#AntiFashion #WabiSabi</span>
+              <button class="brand-more-btn" data-brand="cdg" aria-label="Детальніше про Comme des Garçons">
+                <span>Огляд</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Contact & Terminal -->
+    <section id="contact" class="section">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-label">
+            <span class="label-dash"></span>
+            <span>06 // TRANSMISSION TERMINAL</span>
+          </div>
+          <h2 class="section-title">Зв'язок & Термінал</h2>
+          <p class="section-subtitle">
+            Канал зв'язку для спільних ігор, обміну рідкісним архівом чи питань щодо проєкту.
+          </p>
+        </header>
+
+        <div class="contact-terminal-wrapper">
+          <div class="terminal-header-bar">
+            <div class="terminal-controls" aria-hidden="true">
+              <span class="terminal-control-dot red"></span>
+              <span class="terminal-control-dot yellow"></span>
+              <span class="terminal-control-dot green"></span>
+            </div>
+            <span class="terminal-title">TERMINAL // KYIV_141_ORT.SH</span>
+            <span class="art-badge">ONLINE</span>
+          </div>
+
+          <div class="terminal-content-grid">
+            <div class="terminal-info-side">
+              <div>
+                <h3 class="terminal-lead-text">Готовий до нових викликів та спільних матчів</h3>
+                <p class="bento-text">
+                  Ви можете зв'язатися зі мною через термінал або скопіювати контактний ідентифікатор для Discord чи ігрових клієнтів.
+                </p>
+
+                <div class="terminal-meta-block">
+                  <div class="term-meta-row">
+                    <span class="term-key">Автор:</span>
+                    <span class="term-val">Ivan (Іван)</span>
+                  </div>
+                  <div class="term-meta-row">
+                    <span class="term-key">Заклад:</span>
+                    <span class="term-val">Ліцей №141 «ОРТ», м. Київ</span>
+                  </div>
+                  <div class="term-meta-row">
+                    <span class="term-key">Дисципліни:</span>
+                    <span class="term-val">Fortnite (Unreal), Dota 2 (Mid/Carry)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="copy-info-box">
+                <span class="copy-text mono" id="copyTargetText">ivan.ort.141</span>
+                <button class="copy-btn" id="copyContactBtn" aria-label="Скопіювати контактний тег">
+                  КОПІЮВАТИ
+                </button>
+              </div>
+            </div>
+
+            <!-- Terminal Form -->
+            <form class="terminal-form" id="terminalContactForm">
+              <div class="form-group">
+                <label for="senderName" class="form-label">Ваше ім'я або Game Tag</label>
+                <input type="text" id="senderName" class="form-input" placeholder="Введіть ваш нікнейм..." required>
+              </div>
+
+              <div class="form-group">
+                <label for="senderMsg" class="form-label">Повідомлення</label>
+                <textarea id="senderMsg" class="form-input form-textarea" placeholder="Напишіть повідомлення або пропозицію для дуо/тімейту..." required></textarea>
+              </div>
+
+              <button type="submit" class="form-submit-btn">
+                <span>ВІДПРАВИТИ В ТЕРМІНАЛ</span>
+                <span aria-hidden="true">↵</span>
+              </button>
+
+              <div class="form-status-msg" id="terminalStatusMsg" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Fashion Details Modal -->
+  <div class="modal-overlay" id="brandModalOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Закрити вікно">✕</button>
+      <span class="modal-category" id="modalCategory">Japanese Archive</span>
+      <h3 class="modal-title" id="modalTitle">Brand Title</h3>
+      <div class="modal-founder" id="modalFounder">Founder / City</div>
+      <p class="modal-content" id="modalContent">Brand detailed description...</p>
+      <ul class="modal-key-points" id="modalKeyPoints">
+        <!-- Injected via JavaScript -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-row">
+        <div class="footer-brand-side">
+          <div class="footer-logo">IVAN // 141 ОРТ</div>
+          <p class="footer-tagline">
+            Персональне веб-портфоліо. Навчальний курс «Основи штучного інтелекту» (ОШІ), Проєкт №1. Ліцей №141 «ОРТ», м. Київ, 2026.
+          </p>
+        </div>
+
+        <nav class="footer-nav-links" aria-label="Навігація підвалу сайту">
+          <div class="footer-nav-col">
+            <span class="footer-col-title">Розділи</span>
+            <a href="#about" class="footer-link">Про мене</a>
+            <a href="#esports" class="footer-link">Кіберспорт</a>
+            <a href="#boxing" class="footer-link">Бокс</a>
+          </div>
+          <div class="footer-nav-col">
+            <span class="footer-col-title">Культура</span>
+            <a href="#music" class="footer-link">Музика</a>
+            <a href="#fashion" class="footer-link">Мода</a>
+            <a href="#contact" class="footer-link">Контакти</a>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom-row">
+        <span>© 2026 Ivan. Усі права захищено. Створено за канонами чистого ванільного вебу (Vanilla Web).</span>
+        <a href="#hero" class="back-to-top-btn" aria-label="Повернутися на початок сайту">
+          <span>Вгору</span>
+          <span aria-hidden="true">↑</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
