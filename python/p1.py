@@ -109,7 +109,8 @@ def run_streamlit_app():
     # Вкладка 1: Попередній перегляд даних
     # ==========================================
     with tab_data:
-фвв
+        st.subheader("Огляд набору даних California Housing")
+
         # Ключова статистика
         col_m1, col_m2, col_m3, col_m4 = st.columns(4)
         col_m1.metric("Всього записів", f"{len(df):,}")
