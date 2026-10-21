@@ -21,15 +21,54 @@ FEATURE_DESCRIPTIONS = {
     "Longitude": "Географічна довгота",
 }
 
+
 @st.cache_data
 def load_data():
     """Завантаження та підготовка датасету California Housing"""
+    import os
+
+    # 1. Перевіряємо наявність локального CSV
+    for local_path in ["housing.csv", "python/housing.csv"]:
+        if os.path.exists(local_path):
+            try:
+                df = pd.read_csv(local_path)
+
+                if "MedHouseVal" in df.columns and "Price_100k" not in df.columns:
+                    df.rename(
+                        columns={"MedHouseVal": "Price_100k"},
+                        inplace=True
+                    )
+
+                if "Price_USD" not in df.columns and "Price_100k" in df.columns:
+                    df["Price_USD"] = df["Price_100k"] * 100_000
+
+                feature_names = [
+                    c for c in df.columns
+                    if c not in ["Price_100k", "Price_USD", "MedHouseVal"]
+                ]
+
+                # Повертаємо звичайні дані, які можна кешувати
+                return feature_names, df
+
+            except Exception:
+                pass
+
+    # 2. Якщо CSV немає, завантажуємо вбудований датасет
+    try:
+        import pyodide_http
+        pyodide_http.patch_all()
+    except Exception:
+        pass
+
     housing = fetch_california_housing(as_frame=True)
     df = housing.frame.copy()
-    # Перейменуємо цільову змінну для зручності
+
     df.rename(columns={"MedHouseVal": "Price_100k"}, inplace=True)
     df["Price_USD"] = df["Price_100k"] * 100_000
-    return housing, df
+
+    feature_names = list(housing.feature_names)
+
+    return feature_names, df
 
 @st.cache_resource
 def train_model(X_train, y_train):
@@ -55,8 +94,7 @@ def run_streamlit_app():
     )
 
     # Завантаження даних
-    housing, df = load_data()
-    feature_cols = housing.feature_names
+    feature_cols, df = load_data()
     X = df[feature_cols]
     y = df["Price_100k"]
 
@@ -276,10 +314,19 @@ def run_streamlit_app():
         st.success(f"### 🏷️ Спрогнозована вартість житла: **${predicted_usd:,.0f}** (${predicted_val:.4f} у сотнях тисяч)")
 
 if __name__ == "__main__":
-    # Якщо скрипт запущено через `streamlit run`
-    if st.runtime.exists():
+    is_browser = "pyodide" in sys.modules
+    is_streamlit = False
+    try:
+        is_streamlit = st.runtime.exists()
+    except Exception:
+        pass
+
+    if is_streamlit or is_browser:
         run_streamlit_app()
     else:
         # Якщо користувач запустив просто `python p1.py`, автоматично відкриваємо через streamlit
         print("Запуск веб-інтерфейсу Streamlit...")
-        subprocess.run([sys.executable, "-m", "streamlit", "run", __file__])
+        try:
+            subprocess.run([sys.executable, "-m", "streamlit", "run", __file__])
+        except Exception:
+            run_streamlit_app()

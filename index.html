@@ -44,6 +44,7 @@
           <li><a href="#boxing" class="nav-link">Бокс</a></li>
           <li><a href="#music" class="nav-link">Музика</a></li>
           <li><a href="#fashion" class="nav-link">Мода</a></li>
+          <li><a href="#projects" class="nav-link">Проєкти</a></li>
           <li><a href="#contact" class="nav-link">Контакти</a></li>
         </ul>
       </nav>
@@ -72,7 +73,10 @@
               <span class="status-indicator"></span>
               <span>м. Київ • Ліцей №141 «ОРТ»</span>
             </span>
-            <span class="meta-chip">Курс «ОШІ» // Проєкт №1</span>
+            <a href="#projects" class="meta-chip meta-chip-link" title="Перейти до розділу навчальних проєктів">
+              <span>Курс «ОШІ» // Проєкт №1</span>
+              <span class="chip-arrow" aria-hidden="true">↓</span>
+            </a>
           </div>
 
           <h1 class="hero-headline">IVAN</h1>
@@ -89,6 +93,11 @@
             <a href="#music" class="btn-secondary">
               <span>Аудіо плеєр</span>
               <span aria-hidden="true">♬</span>
+            </a>
+            <a href="#projects" class="btn-project-cta" title="Переглянути інтерактивний ML-проєкт">
+              <span class="cta-icon">⚡</span>
+              <span>Проєкти ОШІ</span>
+              <span aria-hidden="true">↓</span>
             </a>
           </div>
 
@@ -167,13 +176,19 @@
             </p>
 
             <div class="institution-badge">
-              <svg class="institution-icon" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
-              </svg>
-              <div>
-                <div class="institution-title">Ліцей №141 «ОРТ», м. Київ</div>
-                <div class="institution-sub">Курс: Основи штучного інтелекту (ОШІ) • Проєкт 1</div>
+              <div class="institution-main">
+                <svg class="institution-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/>
+                </svg>
+                <div>
+                  <div class="institution-title">Ліцей №141 «ОРТ», м. Київ</div>
+                  <div class="institution-sub">Курс: Основи штучного інтелекту (ОШІ) • Проєкт 1</div>
+                </div>
               </div>
+              <a href="#projects" class="institution-launch-link" title="Перейти до розділу навчальних проєктів">
+                <span>Огляд проєкту</span>
+                <span aria-hidden="true">↓</span>
+              </a>
             </div>
           </article>
 
@@ -660,13 +675,113 @@
       </div>
     </section>
 
-    <!-- Section 6: Contact & Terminal -->
+    <!-- Section 6: Academic & AI Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <header class="section-header">
+          <div class="section-label">
+            <span class="label-dash"></span>
+            <span>06 // MACHINE LEARNING & AI PROJECTS</span>
+          </div>
+          <h2 class="section-title">Проєкти</h2>
+          <p class="section-subtitle">
+            Практичні дослідження в рамках навчального курсу «Основи штучного інтелекту» (ОШІ) Ліцею №141 «ОРТ».
+          </p>
+        </header>
+
+        <div class="project-showcase-container">
+          <article class="project-card-featured">
+            <div class="project-card-header">
+              <div class="project-badge-group">
+                <span class="proj-badge highlight">ОШІ // Проєкт №1</span>
+                <span class="proj-badge">Scikit-Learn</span>
+                <span class="proj-badge">Python</span>
+                <span class="proj-badge stlite">⚡ Stlite WebAssembly</span>
+              </div>
+              <span class="proj-version mono">v1.0.0 // LIVE</span>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-info-main">
+                <h3 class="project-title">California Housing — Лінійна регресія</h3>
+                <p class="project-description">
+                  Інтерактивний додаток для прогнозування медіанної вартості житла в Каліфорнії на основі багатовимірної лінійної регресії (Linear Regression). Дослідження кореляції факторів (дохід, вік будинків, середня кількість кімнат), навчання моделі, аналіз метрик якості (MSE, MAE, R²) та інтерактивна візуалізація залишків.
+                </p>
+
+                <div class="project-specs-grid">
+                  <div class="proj-spec-box">
+                    <span class="proj-spec-label">Датасет:</span>
+                    <span class="proj-spec-val">California Housing (20 640 записів)</span>
+                  </div>
+                  <div class="proj-spec-box">
+                    <span class="proj-spec-label">Цільова змінна:</span>
+                    <span class="proj-spec-val">MedHouseVal ($100k)</span>
+                  </div>
+                  <div class="proj-spec-box">
+                    <span class="proj-spec-label">Ключові фактори:</span>
+                    <span class="proj-spec-val">MedInc, HouseAge, AveRooms, Population...</span>
+                  </div>
+                  <div class="proj-spec-box">
+                    <span class="proj-spec-label">Середовище запуску:</span>
+                    <span class="proj-spec-val">Stlite / Pyodide (Wasm в браузері)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-interactive-preview">
+                <div class="preview-mockup-header">
+                  <span class="mock-dot"></span>
+                  <span class="mock-dot"></span>
+                  <span class="mock-dot"></span>
+                  <span class="mock-title mono">stlite://python/p1.html</span>
+                </div>
+                <div class="preview-content">
+                  <div class="preview-metrics-preview">
+                    <div class="prev-metric">
+                      <span class="prev-num">0.60+</span>
+                      <span class="prev-label">Метрика R²</span>
+                    </div>
+                    <div class="prev-metric">
+                      <span class="prev-num">0.52</span>
+                      <span class="prev-label">Mean Squared Error</span>
+                    </div>
+                  </div>
+                  <p class="preview-note">
+                    Застосунок працює повністю на стороні клієнта за допомогою технології <strong>WebAssembly</strong> без потреби у бекенд-сервері.
+                  </p>
+                  <a href="python/p1.html" class="btn-primary project-launch-action" title="Відкрити інтерактивну модель California Housing">
+                    <span>Запустити проєкт (Stlite)</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-footer">
+              <div class="project-tech-tags">
+                <span class="tech-tag">#scikit-learn</span>
+                <span class="tech-tag">#pandas</span>
+                <span class="tech-tag">#numpy</span>
+                <span class="tech-tag">#matplotlib</span>
+                <span class="tech-tag">#webassembly</span>
+              </div>
+              <a href="python/p1.html" class="project-inline-link" title="Перейти до повної сторінки моделі">
+                <span>Перейти до моделі</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Contact & Terminal -->
     <section id="contact" class="section">
       <div class="container">
         <header class="section-header">
           <div class="section-label">
             <span class="label-dash"></span>
-            <span>06 // TRANSMISSION TERMINAL</span>
+            <span>07 // TRANSMISSION TERMINAL</span>
           </div>
           <h2 class="section-title">Зв'язок & Термінал</h2>
           <p class="section-subtitle">
@@ -771,6 +886,7 @@
           <div class="footer-nav-col">
             <span class="footer-col-title">Розділи</span>
             <a href="#about" class="footer-link">Про мене</a>
+            <a href="#projects" class="footer-link">Проєкти</a>
             <a href="#esports" class="footer-link">Кіберспорт</a>
             <a href="#boxing" class="footer-link">Бокс</a>
           </div>

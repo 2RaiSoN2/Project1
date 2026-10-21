@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>California Housing — Лінійна регресія (stlite) // Проєкт №1</title>
+  
+  <!-- Stlite CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/browser@1.12.0/build/stlite.css" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #0e1117;
+      color: #fafafa;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Верхня навігаційна панель повернення до портфоліо */
+    .top-nav-bar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(14, 17, 23, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fafafa;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      transition: all 0.2s ease;
+    }
+
+    .back-link:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: translateX(-2px);
+    }
+
+    .top-badge {
+      font-size: 0.8rem;
+      color: #9ca3af;
+      font-family: monospace;
+    }
+
+    @media (max-width: 600px) {
+      .top-badge {
+        display: none;
+      }
+    }
+
+    /* Стильний завантажувач WebAssembly / Pyodide */
+    #loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at 50% 40%, #1a1e24 0%, #0e1117 80%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 99999;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .loader-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 36px 40px;
+      max-width: 480px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(10px);
+    }
+
+    .spinner {
+      width: 56px;
+      height: 56px;
+      border: 4px solid rgba(255, 255, 255, 0.12);
+      border-left-color: #ff4b4b;
+      border-top-color: #ff4b4b;
+      border-radius: 50%;
+      animation: spin 1s cubic-bezier(0.55, 0.15, 0.45, 0.85) infinite;
+      margin: 0 auto 20px auto;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loader-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .loader-desc {
+      font-size: 0.9rem;
+      color: #9ca3af;
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    .loader-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-family: monospace;
+      color: #ff8585;
+      background: rgba(255, 75, 75, 0.1);
+      border: 1px solid rgba(255, 75, 75, 0.25);
+      border-radius: 999px;
+    }
+
+    #root {
+      min-height: calc(100vh - 49px);
+    }
+  </style>
+</head>
+<body>
+  <!-- Верхній бар швидкого повернення -->
+  <header class="top-nav-bar">
+    <a href="../index.html" class="back-link">
+      <span aria-hidden="true">←</span>
+      <span>Повернутися до портфоліо</span>
+    </a>
+    <span class="top-badge">Ліцей №141 «ОРТ» // Курс «ОШІ» • Проєкт №1</span>
+  </header>
+
+  <!-- Індикатор завантаження Stlite / Pyodide -->
+  <div id="loading-overlay">
+    <div class="loader-card">
+      <div class="spinner"></div>
+      <h2 class="loader-title">Запуск Stlite в браузері</h2>
+      <p class="loader-desc">
+        Завантаження Pyodide WebAssembly та модулів <code>scikit-learn</code>, <code>pandas</code>, <code>matplotlib</code>...
+      </p>
+      <span class="loader-badge">⚡ Працює повністю клієнтсько через WebAssembly</span>
+    </div>
+  </div>
+
+  <!-- Контейнер для Streamlit-додатку -->
+  <div id="root"></div>
+
+  <!-- Підключення Stlite Browser через ES-модуль -->
+  <script type="module">
+    import { mount } from "https://cdn.jsdelivr.net/npm/@stlite/browser@1.12.0/build/stlite.js";
+
+    async function initStlite() {
+      const rootEl = document.getElementById("root");
+      const loaderEl = document.getElementById("loading-overlay");
+
+      let p1Code = null;
+
+      // 1. Завантаження вмісту p1.py з поточної папки
+      try {
+        const response = await fetch("./p1.py");
+        if (response.ok) {
+          p1Code = await response.text();
+          console.log("[stlite] Успішно завантажено p1.py через fetch");
+        }
+      } catch (err) {
+        console.warn("[stlite] Fetch недоступний (можливо, відкриття через file://).", err);
+      }
+
+      // Налаштування віртуальної файлової системи Stlite
+      const files = {};
+
+      if (p1Code) {
+        files["p1.py"] = p1Code;
+      } else {
+        files["p1.py"] = { url: "./p1.py" };
+      }
+
+      // Додаємо локальний датасет, якщо доступний
+      files["housing.csv"] = { url: "./housing.csv" };
+
+      try {
+        mount({
+          requirements: [
+            "scikit-learn",
+            "pandas",
+            "numpy",
+            "matplotlib",
+            "pyodide-http"
+          ],
+          entrypoint: "p1.py",
+          files: files,
+        }, rootEl);
+
+        // Приховуємо завантажувач після ініціалізації
+        setTimeout(() => {
+          if (loaderEl) {
+            loaderEl.style.opacity = "0";
+            setTimeout(() => {
+              loaderEl.style.visibility = "hidden";
+            }, 400);
+          }
+        }, 1200);
+      } catch (error) {
+        console.error("[stlite] Помилка монтування:", error);
+        if (loaderEl) {
+          loaderEl.innerHTML = `
+            <div class="loader-card">
+              <h2 style="color: #ef4444; margin-bottom: 10px;">Помилка ініціалізації</h2>
+              <p style="color: #9ca3af; font-size: 0.9rem;">${error.message || error}</p>
+            </div>
+          `;
+        }
+      }
+    }
+
+    initStlite();
+  </script>
+</body>
+</html>
